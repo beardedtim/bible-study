@@ -19,3 +19,11 @@ npm run dev
 
 You can now access `localhost:5000` according to the Insomnia
 API docs found in the [artifacts](./artifacts/API-Docs-Insomnia.yml)
+
+### Changing Port
+
+You will want to change `server.listen(<port>)` inside of `index.js`
+
+### Change DB Connection Values
+
+You will want to change `knexfile.js`
