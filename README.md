@@ -19,7 +19,7 @@ node index.js
 npm run dev
 ```
 
-You can now access `localhost:5000` according to the Insomnia
+You can now access `localhost:5000` according to the [Insomnia](https://insomnia.rest)
 API docs found in the [artifacts](./artifacts/API-Docs-Insomnia.yml)
 
 ### Changing Port
