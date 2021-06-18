@@ -1,8 +1,78 @@
 _type: export
 __export_format: 4
-__export_date: 2021-06-18T15:32:25.762Z
+__export_date: 2021-06-18T15:58:50.473Z
 __export_source: insomnia.desktop.app:v2021.3.0
 resources:
+  - _id: req_0df82bdf1b6d4c3c97815330a116c3cc
+    parentId: fld_a7a77b8b61b641e1998c270bee05b205
+    modified: 1624031914641
+    created: 1624030944108
+    url: "{{ _.api_base }}/genres/Wisdom"
+    name: List Books in Genre
+    description: Lists books, in chronological order, that are in the specific genre
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624030944108
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_a7a77b8b61b641e1998c270bee05b205
+    parentId: fld_8bfc1e2454df43029dd82720d73e34f9
+    modified: 1624030938962
+    created: 1624030938962
+    name: :Genre Name
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624030938962
+    _type: request_group
+  - _id: fld_8bfc1e2454df43029dd82720d73e34f9
+    parentId: wrk_af3cbb323d5a45eca0cc5016f961155c
+    modified: 1624030889580
+    created: 1624030889580
+    name: Genres
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624030889580
+    _type: request_group
+  - _id: wrk_af3cbb323d5a45eca0cc5016f961155c
+    parentId: null
+    modified: 1624024292076
+    created: 1624024292076
+    name: Bible App
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_3b2b9356c0ed439fb17211f144b92bdb
+    parentId: fld_8bfc1e2454df43029dd82720d73e34f9
+    modified: 1624030919038
+    created: 1624030893214
+    url: "{{ _.api_base }}/genres"
+    name: List Genres
+    description: Lists the know genres and their names
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624030893214
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_c83d3d8448d64de4bb3256c6f246f602
     parentId: fld_6484a8a47f484d049c6abfcbb02c7abe
     modified: 1624030214187
@@ -34,14 +104,6 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1624030099371
     _type: request_group
-  - _id: wrk_af3cbb323d5a45eca0cc5016f961155c
-    parentId: null
-    modified: 1624024292076
-    created: 1624024292076
-    name: Bible App
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_a259a151fb8341489c663fb091175f66
     parentId: fld_777c70f4d8fc4f72bbd4b4469b80909b
     modified: 1624030310041
