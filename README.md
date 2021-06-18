@@ -10,7 +10,7 @@ npm install
 # If this is your first time,
 # you will need to prepare the DB
 # This will not exit and once it prints
-# "done", wait 5 seconds then ctrl + c
+# "Database prepared", wait 3 seconds then ctrl + c
 node init.js
 # You can then run the system in production
 node index.js
