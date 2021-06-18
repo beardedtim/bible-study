@@ -1,0 +1,23 @@
+{
+  "name": "bible-study",
+  "version": "0.0.1",
+  "description": "A Node.JS application to aid in my walk with Christ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Tim Roberts <tim@mck-p.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "knex": "^0.95.6",
+    "koa": "^2.13.1",
+    "pg": "^8.6.0",
+    "rxjs": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

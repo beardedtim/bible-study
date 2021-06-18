@@ -1,0 +1,240 @@
+_type: export
+__export_format: 4
+__export_date: 2021-06-18T15:32:25.762Z
+__export_source: insomnia.desktop.app:v2021.3.0
+resources:
+  - _id: req_c83d3d8448d64de4bb3256c6f246f602
+    parentId: fld_6484a8a47f484d049c6abfcbb02c7abe
+    modified: 1624030214187
+    created: 1624030104287
+    url: "{{ _.api_base }}/translations"
+    name: List Translations
+    description: Gets the currently known list of translations
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624030104287
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_6484a8a47f484d049c6abfcbb02c7abe
+    parentId: wrk_af3cbb323d5a45eca0cc5016f961155c
+    modified: 1624030099371
+    created: 1624030099371
+    name: Translations
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624030099371
+    _type: request_group
+  - _id: wrk_af3cbb323d5a45eca0cc5016f961155c
+    parentId: null
+    modified: 1624024292076
+    created: 1624024292076
+    name: Bible App
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_a259a151fb8341489c663fb091175f66
+    parentId: fld_777c70f4d8fc4f72bbd4b4469b80909b
+    modified: 1624030310041
+    created: 1624029965738
+    url: "{{ _.api_base }}/books/Genesis/1/1/web"
+    name: Get Verse Text
+    description: Text of a specific version of a specific translation
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624029965738
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_777c70f4d8fc4f72bbd4b4469b80909b
+    parentId: fld_1143a6c464ec407395e0643020a1707c
+    modified: 1624029960303
+    created: 1624029960303
+    name: :Translation
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624029960303
+    _type: request_group
+  - _id: fld_1143a6c464ec407395e0643020a1707c
+    parentId: fld_7d05b266b9c843c5b0cd18700f060603
+    modified: 1624027029956
+    created: 1624027029956
+    name: :Verse Number
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624027029956
+    _type: request_group
+  - _id: fld_7d05b266b9c843c5b0cd18700f060603
+    parentId: fld_891acc4885cd49ccb07346c3e092c622
+    modified: 1624026451151
+    created: 1624026451151
+    name: :Chapter Number
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624026451151
+    _type: request_group
+  - _id: fld_891acc4885cd49ccb07346c3e092c622
+    parentId: fld_939b0c506f6546dfbf5c8dfe30d95814
+    modified: 1624026184141
+    created: 1624026184141
+    name: :Book Name
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624026184142
+    _type: request_group
+  - _id: fld_939b0c506f6546dfbf5c8dfe30d95814
+    parentId: wrk_af3cbb323d5a45eca0cc5016f961155c
+    modified: 1624024320177
+    created: 1624024320177
+    name: Books
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1624024320177
+    _type: request_group
+  - _id: req_7085e84fe2c04466b9c65c73deb8445f
+    parentId: fld_1143a6c464ec407395e0643020a1707c
+    modified: 1624030290272
+    created: 1624027036802
+    url: "{{ _.api_base }}/books/Genesis/1/1"
+    name: Get Verse Text
+    description: The specific text of a verse, grouped by translation
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624027036836
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e1b9fb3c5dcf4ff9818c4b880383153e
+    parentId: fld_7d05b266b9c843c5b0cd18700f060603
+    modified: 1624030281522
+    created: 1624026455206
+    url: "{{ _.api_base }}/books/Genesis/1"
+    name: List All Verses of Chapter
+    description: Gets the verse in order for a specific chapter, grouped by Translation.
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624026455206
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e13ab1ef4cac4491bdab3a55ebdbe2ef
+    parentId: fld_891acc4885cd49ccb07346c3e092c622
+    modified: 1624030250500
+    created: 1624026193261
+    url: "{{ _.api_base }}/books/Genesis"
+    name: List Verses Grouped By Chapter
+    description: Returns the whole book, grouped by Translation and Chapter
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624026193295
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ad3aee48094349e6afc60b52f87e6261
+    parentId: fld_939b0c506f6546dfbf5c8dfe30d95814
+    modified: 1624030232795
+    created: 1624024324687
+    url: "{{ _.api_base }}/books"
+    name: Get List of Books
+    description: Gets the list of books, in order, and also groups them by their
+      Testament, Old or New
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1624024324687
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_7f4bab1716d45d8a94274531bf58b5cbba7bb516
+    parentId: wrk_af3cbb323d5a45eca0cc5016f961155c
+    modified: 1624024292306
+    created: 1624024292306
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1624024292306
+    _type: environment
+  - _id: jar_7f4bab1716d45d8a94274531bf58b5cbba7bb516
+    parentId: wrk_af3cbb323d5a45eca0cc5016f961155c
+    modified: 1624024292309
+    created: 1624024292309
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_facb872c2d4645c2b628f9834ea8bc5c
+    parentId: wrk_af3cbb323d5a45eca0cc5016f961155c
+    modified: 1624024292078
+    created: 1624024292078
+    fileName: Bible App
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_56d5dbd1c74c4ec59d7a09e87815473b
+    parentId: env_7f4bab1716d45d8a94274531bf58b5cbba7bb516
+    modified: 1624024312393
+    created: 1624024297165
+    name: Local
+    data:
+      api_base: http://localhost:5000
+    dataPropertyOrder:
+      "&":
+        - api_base
+    color: null
+    isPrivate: false
+    metaSortKey: 1624024297165
+    _type: environment
