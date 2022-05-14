@@ -1,5 +1,4 @@
 const Router = require("@koa/router");
-const { default: build } = require("next/dist/build");
 const DB = require("../connectors/db");
 
 const router = new Router({

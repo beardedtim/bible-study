@@ -67,27 +67,67 @@ module.exports = router
       .where({
         book_name: ctx.params.book_name,
         chapter_num: Number(ctx.params.chapter_num),
+      })
+      .where((builder) => {
+        if (ctx.query.verse_start) {
+          builder.where("verse_num", ">=", ctx.query.verse_start);
+        }
+
+        if (ctx.query.verse_end) {
+          builder.where("verse_num", "<=", ctx.query.verse_end);
+        }
+
+        return builder;
       });
 
+    const groupedByTranslation = result.reduce(
+      (translations, { verse_num, verse_txt, translation }) => {
+        if (!(translation in translations)) {
+          translations[translation] = [];
+        }
+
+        translations[translation].push({
+          verse_num,
+          verse_txt,
+        });
+
+        return translations;
+      },
+      {}
+    );
+
+    const sortedAndJustText = Object.entries(groupedByTranslation).reduce(
+      (state, [translation, verses]) => {
+        state[translation] = verses
+          .sort((a, b) => a.verse_num - b.verse_num)
+          .map(({ verse_txt }) => verse_txt);
+
+        return state;
+      },
+      {}
+    );
+
     ctx.body = {
-      data: result.reduce(
-        (translations, { verse_num, verse_txt, translation }) => {
-          if (!(translation in translations)) {
-            translations[translation] = [];
-          }
-
-          translations[translation][verse_num - 1] = verse_txt;
-
-          return translations;
-        },
-        {}
-      ),
+      data: sortedAndJustText,
     };
   })
   .get("/:book_name", async (ctx) => {
-    const result = await DB.from("verses").select("*").where({
-      book_name: ctx.params.book_name,
-    });
+    const result = await DB.from("verses")
+      .select("*")
+      .where({
+        book_name: ctx.params.book_name,
+      })
+      .where((builder) => {
+        if (ctx.query.chap_start) {
+          builder.where("chapter_num", ">=", ctx.query.chap_start);
+        }
+
+        if (ctx.query.chap_end) {
+          builder.where("chapter_num", "<=", ctx.query.chap_end);
+        }
+
+        return builder;
+      });
 
     ctx.body = {
       data: result.reduce(
